@@ -19,19 +19,23 @@ public class CitySim9002 {
     public static void main(String[] args) {
         if (new Validator().validateArguments(args)) {
             int seed = Integer.parseInt(args[0]);  //返回你输入 java CitySim900 n 中的n
-            System.out.println(args[0]);
-            String allVisitors[] = {"Student","Professor","BusinessPerson","Blogger"};
+            System.out.println("Welcome to CitySim! Your seed is "+ seed);
+            //String allVisitors[] = {"Student","Professor","BusinessPerson","Blogger"};
             Random random = new Random();
-            for(int i = 0; i< seed; i++){
+            for(int i = 1; i<= seed; i++){
                 int randomChoose = random.nextInt(4); //[0,4) 0,1,2,3
                 if (randomChoose==0){
-                    Student newStudent = new Student(i+1);
+                    System.out.println("Visitor " + i +" is a student");
+                    Student newStudent = new Student(i);
                 }else if(randomChoose == 1){
-                    Professor newProfessor = new Professor(i+1);
+                    System.out.println("Visitor " + i +" is a professor");
+                    Professor newProfessor = new Professor(i);
                 }else if(randomChoose == 2){
-                    BusinessPerson newBusinessPerson = new BusinessPerson(i+1);
+                    System.out.println("Visitor " + i +" is a business person");
+                    BusinessPerson newBusinessPerson = new BusinessPerson(i);
                 }else {
-                    Blogger newBlogger = new Blogger(i+1);
+                    System.out.println("Visitor " + i +" is a blogger");
+                    Blogger newBlogger = new Blogger(i);
                 }
                 
             }
@@ -39,11 +43,8 @@ public class CitySim9002 {
         else {
             System.out.println(errorMessage);
         }
-        Student me = new Student(1);
+        //Student me = new Student(1);
         //me.addLocs("dkjfl");
         
-        
-        System.out.println( me instanceof Visitor);
-        System.out.println(me.getLocs());
     }
 }
