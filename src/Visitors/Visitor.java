@@ -1,0 +1,73 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Visitors;
+
+import CityLocs.Citylocations;
+import java.util.ArrayList;
+import java.util.Random;
+
+/**
+ *
+ * @author simiao
+ */
+
+public class Visitor{
+    private ArrayList<String> likeLocs;
+    private int no;
+    public Visitor(int no){
+        this.no = no;
+        this.likeLocs = new ArrayList<String>();
+        //new line
+        this.iteration();
+    }
+    public ArrayList<String> getLocs(){
+        return likeLocs;
+    }
+    public void addLocs(String loc){
+        likeLocs.add(loc);
+    }
+    
+    public void iteration(){
+        int i = 0;
+        Random random = new Random();
+        Citylocations citylocs = new Citylocations();
+        //System.out.println(citylocs.locs);
+        while(i!=4){
+            if(i==0){
+                int randomValue = random.nextInt(4); //[0,4)  0,1,2,3
+                System.out.println("Visitor " + no + " is going to" + citylocs.locs.get(randomValue));
+                isLiked(randomValue, citylocs);
+            }else{
+                if(citylocs.locs.size() <5){
+                    citylocs.addLocations();
+                }
+                int randomValue = random.nextInt(5); //0,1,2,3,4
+                if (randomValue <4){
+                    System.out.println("Visitor " + no + " is going to " + citylocs.locs.get(randomValue));
+                    isLiked(randomValue, citylocs);
+                }else {
+                    System.out.println("Visitor has left the city");
+                }
+                
+            }
+        }
+    }
+    //A method to see whether the randomly selected city is liked by the visitor
+    public void isLiked(int randomValue, Citylocations citylocs){
+        if (likeLocs.contains(citylocs.locs.get(randomValue))){
+            System.out.println("Visitor" + no + "did like" + citylocs.locs.get(randomValue));
+        }else{
+            System.out.println("Visitor" + no + "did not like" + citylocs.locs.get(randomValue));
+        }
+        
+    }
+//    public void addLocs(String loc){
+//        likeLocs.add(loc);
+//    }
+////    public void like(){   
+////    }
+
+}
