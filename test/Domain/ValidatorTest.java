@@ -39,10 +39,22 @@ public class ValidatorTest {
     public void ifArgumentLengthAndArgumentTypeIsCorrect() {
         Validator mockValidator = mock(Validator.class);
         when(mockValidator.validateNumberOfArguments(any(String[].class))).thenReturn(true);
-        when(mockValidator.validateArgumentType(any(String[].class))).thenReturn(true);
+        when(mockValidator.validateIsNotZero(any(String[].class))).thenReturn(true);
         when(mockValidator.validateArguments(any(String[].class))).thenCallRealMethod();        
         Assert.assertTrue(mockValidator.validateArguments(new String[0]));
     }
     
+    @Test
+    public void ifArgumentIsNotZero(){
+        Assert.assertFalse(new Validator().validateIsNotZero(new String[] { "0" }));
+    }
+    
+    @Test
+    public void ifArgumentIsNotZeorIsCorrect(){
+        Validator mockValidator = mock(Validator.class);
+        when(mockValidator.validateArgumentType(any(String[].class))).thenReturn(true);  
+        when(mockValidator.validateIsNotZero(any(String[].class))).thenCallRealMethod();
+        Assert.assertTrue(mockValidator.validateIsNotZero(new String[] {"6"}));
+    }
     
 }

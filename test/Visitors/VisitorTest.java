@@ -5,10 +5,14 @@
  */
 package Visitors;
 import CityLocs.*;
+import java.util.ArrayList;
 import java.util.Random;
 import org.junit.Assert;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
+import org.mockito.Mockito;
 import static org.mockito.Mockito.*;
 /**
  *
@@ -28,5 +32,17 @@ public class VisitorTest {
         assertTrue(v.isLiked(2, citylocs));
         
     }
+    
+    //test that the locations student like is {"Squirrel Hill", "DownTown", "The Point"}
+    @Test
+    public void testGetLocs(){
+        Visitor v = new Student(1);
+        ArrayList<String> result = v.getLocs();
+        String[] expResult = {"Squirrel Hill", "Downtown", "The Point"};
+        assertArrayEquals(result.toArray(), expResult);
+        
+    }
+    
+    
     
 }

@@ -11,7 +11,7 @@ package Domain;
  */
 <span class="fc" id="L12">public class Validator {</span>
     public boolean validateArguments(String[] args) {
-<span class="pc bpc" id="L14" title="2 of 4 branches missed.">        return validateNumberOfArguments(args) &amp;&amp; validateArgumentType(args);</span>
+<span class="pc bpc" id="L14" title="2 of 4 branches missed.">        return validateNumberOfArguments(args) &amp;&amp; validateIsNotZero(args);</span>
     }
     //检验输入的值是不是只是一个String
     public boolean validateNumberOfArguments(String[] args) {
@@ -24,6 +24,20 @@ package Domain;
 <span class="fc" id="L24">            return true;</span>
 <span class="fc" id="L25">        } catch (Exception e) {</span>
 <span class="fc" id="L26">            return false;</span>
+        }
+    }
+    
+    public boolean validateIsNotZero(String[] args) {
+<span class="fc" id="L31">        boolean argumentType = validateArgumentType(args);</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        if (argumentType){</span>
+<span class="fc" id="L33">            int arg = Integer.parseInt(args[0]);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            if(arg == 0){</span>
+<span class="fc" id="L35">                return false;</span>
+            }else{
+<span class="fc" id="L37">                return true;</span>
+            }               
+        }else {
+<span class="nc" id="L40">            return false;</span>
         }
     }
     

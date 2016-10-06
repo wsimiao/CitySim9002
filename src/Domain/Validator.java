@@ -11,7 +11,7 @@ package Domain;
  */
 public class Validator {
     public boolean validateArguments(String[] args) {
-        return validateNumberOfArguments(args) && validateArgumentType(args);
+        return validateNumberOfArguments(args) && validateIsNotZero(args);
     }
     //检验输入的值是不是只是一个String
     public boolean validateNumberOfArguments(String[] args) {
@@ -23,6 +23,20 @@ public class Validator {
             Integer.parseInt(args[0]);
             return true;
         } catch (Exception e) {
+            return false;
+        }
+    }
+    
+    public boolean validateIsNotZero(String[] args) {
+        boolean argumentType = validateArgumentType(args);
+        if (argumentType){
+            int arg = Integer.parseInt(args[0]);
+            if(arg == 0){
+                return false;
+            }else{
+                return true;
+            }               
+        }else {
             return false;
         }
     }
