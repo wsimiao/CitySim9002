@@ -18,7 +18,7 @@
 ***
 
 
-  <img src="images/result.png">
+  <img src="images/Result.png">
   ***
   <img src="images/fail.png">
 
