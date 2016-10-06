@@ -12,8 +12,10 @@ package Visitors;
 public class BusinessPerson extends Visitor{
     public BusinessPerson(int no){
         super(no);
+        this.setType("BusinessPerson");
         this.addLocs("Squirrel Hill");
         this.addLocs("Downtown");
+        //System.out.println("Visitor " + (no+1) + " is a BusinessPerson.");
     }
         
 }

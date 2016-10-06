@@ -6,22 +6,79 @@
 package Program;
 
 import Domain.Validator;
+import Visitors.*;
+import java.util.Random;
 
 /**
  *
  * @author AsphaltPanthers
  */
-<span class="nc" id="L14">public class CitySim9002 {</span>
-<span class="nc" id="L15">    public static String errorMessage = &quot;Please enter one integer argument, seed&quot;;</span>
+<span class="nc" id="L16">public class CitySim9002 {</span>
+<span class="fc" id="L17">    public static String errorMessage = &quot;Please enter one integer argument, seed&quot;;</span>
     
-    public static int main(String[] args) {
-<span class="nc bnc" id="L18" title="All 2 branches missed.">        if (new Validator().validateArguments(args)) {</span>
-<span class="nc" id="L19">            return 0;</span>
-        }
+    public static void main(String[] args) {
+<span class="nc bnc" id="L20" title="All 2 branches missed.">        if (new Validator().validateArguments(args)) {</span>
+<span class="nc" id="L21">            int seed = Integer.parseInt(args[0]);  //返回你输入 java CitySim900 n 中的n</span>
+<span class="nc" id="L22">            System.out.println(&quot;Welcome to CitySim! Your seed is &quot;+ seed);</span>
+<span class="nc" id="L23">            Random random = new Random(seed);</span>
+<span class="nc" id="L24">            CitySim9002 cs = new CitySim9002();</span>
+<span class="nc" id="L25">            cs.generateFiveVisitors(random);</span>
+            
+//            for(int i = 1; i&lt;= 5; i++){
+//                int randomChoose = random.nextInt(4); //[0,4) 0,1,2,3
+//                if (randomChoose==0){
+//                    System.out.println(&quot;Visitor &quot; + i +&quot; is a student&quot;);
+//                    Student newStudent = new Student(i);
+//                }else if(randomChoose == 1){
+//                    System.out.println(&quot;Visitor &quot; + i +&quot; is a professor&quot;);
+//                    Professor newProfessor = new Professor(i);
+//                }else if(randomChoose == 2){
+//                    System.out.println(&quot;Visitor &quot; + i +&quot; is a business person&quot;);
+//                    BusinessPerson newBusinessPerson = new BusinessPerson(i);
+//                }else {
+//                    System.out.println(&quot;Visitor &quot; + i +&quot; is a blogger&quot;);
+//                    Blogger newBlogger = new Blogger(i);
+//                }
+//                
+//            }
+
+<span class="nc" id="L45">        }</span>
         else {
-<span class="nc" id="L22">            System.out.println(errorMessage);</span>
-<span class="nc" id="L23">            return -1;</span>
+<span class="nc" id="L47">            System.out.println(errorMessage);</span>
         }
+
+        
+<span class="nc" id="L51">    }</span>
+    
+    public Visitor generateVisitor(int randomChoose, int no){
+        Visitor v;
+<span class="fc bfc" id="L55" title="All 2 branches covered.">       if(randomChoose == 0){</span>
+<span class="fc" id="L56">           System.out.println(&quot;Visitor &quot; + no +&quot; is a student&quot;);</span>
+<span class="fc" id="L57">           v = new Student(no);</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">       }else if(randomChoose ==1){</span>
+<span class="fc" id="L59">           System.out.println(&quot;Visitor &quot; + no +&quot; is a professor&quot;);</span>
+<span class="fc" id="L60">           v = new Professor(no);</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">       }else if(randomChoose ==2){</span>
+<span class="fc" id="L62">           System.out.println(&quot;Visitor &quot; + no +&quot; is a business person&quot;);</span>
+<span class="fc" id="L63">           v = new BusinessPerson(no);</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">       }else if(randomChoose ==3){</span>
+<span class="fc" id="L65">           System.out.println(&quot;Visitor &quot; + no +&quot; is a blogger&quot;);</span>
+<span class="fc" id="L66">           v = new Blogger(no);</span>
+       }else{
+<span class="nc" id="L68">           v=null;</span>
+       }
+<span class="fc" id="L70">       return v;</span>
     }
+    
+    public void generateFiveVisitors(Random rand){
+        //Random rand = new Random(seed);
+<span class="nc" id="L75">        Visitor visitor = null;</span>
+<span class="nc bnc" id="L76" title="All 2 branches missed.">        for (int i=1; i&lt;=5; i++){</span>
+<span class="nc" id="L77">            visitor = generateVisitor(rand.nextInt(4), i);</span>
+        }
+<span class="nc" id="L79">    }</span>
+    
+           
+    
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

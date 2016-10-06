@@ -16,10 +16,11 @@ public class Student extends Visitor{
     //private ArrayList<String> likeLocs;
     public Student(int no){
         super(no);
-        //likeLocs.add("");
+        this.setType("Student");
         this.addLocs("Squirrel Hill");
         this.addLocs("Downtown");
         this.addLocs("The Point");
+        //System.out.println("Visitor " + (no+1) + " is a Student.");
     }
 
 //    @Override

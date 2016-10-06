@@ -17,6 +17,7 @@ import java.util.Random;
 public class Visitor{
     private ArrayList<String> likeLocs;
     private int no;
+    private String type;
     public Visitor(int no){
         this.no = no;
         this.likeLocs = new ArrayList<String>();
@@ -52,6 +53,7 @@ public class Visitor{
                     isLiked(randomValue, citylocs);
                 }else {
                     System.out.println("Visitor "+ no +" has left the city");
+                    System.out.println("***");
                 }
                 
             }
@@ -59,13 +61,22 @@ public class Visitor{
         }
     }
     //A method to see whether the randomly selected city is liked by the visitor
-    public void isLiked(int randomValue, Citylocations citylocs){
+    public boolean isLiked(int randomValue, Citylocations citylocs){
         if (likeLocs.contains(citylocs.locs.get(randomValue))){
             System.out.println("Visitor " + no + " did like " + citylocs.locs.get(randomValue));
+            return true;
         }else{
             System.out.println("Visitor " + no + " did not like " + citylocs.locs.get(randomValue));
+            return false;
         }
         
+    }
+    
+    public void setType(String type){
+        this.type = type;
+    }
+    public String getType(){
+        return this.type;
     }
 
 

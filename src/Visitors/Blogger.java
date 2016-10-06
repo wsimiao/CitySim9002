@@ -17,6 +17,8 @@ public class Blogger extends Visitor{
 //    
     public Blogger(int no){
         super(no);
+        this.setType("Blogger");
         //this.addLocs("")
+        //System.out.println("Visitor " + (no+1) + " is a Blogger.");
     }
 }
