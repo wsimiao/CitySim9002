@@ -1,5 +1,5 @@
 #IS2545 - DELIVERABLE 2: Unit Testing
-### Wang pittID:siw20
+### Simiao Wang pittID:siw20
 ***
 **1. The challenge for this project**
 
