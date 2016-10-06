@@ -4,8 +4,9 @@
 **1. The challenge for this project**
 
 1 Use Object Oriented Design
-  * I designed two classes
-  * Citylocations used to store general location info
+  * I designed two packages which are Citylocations and Visitors
+  * For Visitors Packages, the Visitor class is the super class and other classes inherited Visitor.
+  * Citylocations package only have one class which is used to store general location info.
   * Visitor class and its subclasses used to build the four kind of visitors
 
 2 Write testable code
