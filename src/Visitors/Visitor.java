@@ -22,7 +22,7 @@ public class Visitor{
         this.no = no;
         this.likeLocs = new ArrayList<String>();
         //new line
-        this.iteration();
+        //this.iteration();
     }
     public ArrayList<String> getLocs(){
         return likeLocs;
@@ -41,7 +41,7 @@ public class Visitor{
         while(randomValue!=4){
             if(i==0){
                 //int randomValue = random.nextInt(4); //[0,4)  0,1,2,3
-                System.out.println("Visitor " + no + " is going to " + citylocs.locs.get(randomValue));
+                System.out.println("Visitor " + no + " is going to " + citylocs.locs.get(randomValue) + "!");
                 isLiked(randomValue, citylocs);
             }else{
                 if(citylocs.locs.size() <5){
@@ -49,10 +49,10 @@ public class Visitor{
                 }
                 randomValue = random.nextInt(5); //0,1,2,3,4
                 if (randomValue <4){
-                    System.out.println("Visitor " + no + " is going to " + citylocs.locs.get(randomValue));
+                    System.out.println("Visitor " + no + " is going to " + citylocs.locs.get(randomValue) + "!");
                     isLiked(randomValue, citylocs);
                 }else {
-                    System.out.println("Visitor "+ no +" has left the city");
+                    System.out.println("Visitor "+ no +" has left the city.");
                     System.out.println("***");
                 }
                 
@@ -63,10 +63,10 @@ public class Visitor{
     //A method to see whether the randomly selected city is liked by the visitor
     public boolean isLiked(int randomValue, Citylocations citylocs){
         if (likeLocs.contains(citylocs.locs.get(randomValue))){
-            System.out.println("Visitor " + no + " did like " + citylocs.locs.get(randomValue));
+            System.out.println("Visitor " + no + " did like " + citylocs.locs.get(randomValue) + "!");
             return true;
         }else{
-            System.out.println("Visitor " + no + " did not like " + citylocs.locs.get(randomValue));
+            System.out.println("Visitor " + no + " did not like " + citylocs.locs.get(randomValue) + ".");
             return false;
         }
         
