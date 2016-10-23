@@ -19,7 +19,6 @@ public class CitySim9002Test {
     
     @Test
     public void testGenerateVisitor(){
-        Student s = new Student(1);
         Mockito.when(cs.generateVisitor(0, 1)).thenCallRealMethod();
         assertEquals(cs.generateVisitor(0, 1).getType(),"Student");  
         Mockito.when(cs.generateVisitor(1, 1)).thenCallRealMethod();
