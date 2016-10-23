@@ -13,7 +13,7 @@ import java.util.Random;
  * @author simiao
  */
 public class Student extends Visitor{
-    //private ArrayList<String> likeLocs;
+
     public Student(int no){
         super(no);
         this.setType("Student");

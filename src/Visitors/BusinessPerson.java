@@ -15,7 +15,6 @@ public class BusinessPerson extends Visitor{
         this.setType("BusinessPerson");
         this.addLocs("Squirrel Hill");
         this.addLocs("Downtown");
-        //System.out.println("Visitor " + (no+1) + " is a BusinessPerson.");
     }
         
 }

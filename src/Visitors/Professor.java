@@ -17,7 +17,7 @@ public class Professor extends Visitor{
         this.addLocs("Downtown");
         this.addLocs("The Point");
         this.addLocs("The Cathedral of Learning");
-        //System.out.println("Visitor " + no + " is a Professor.");
+
     }
     
 }

@@ -10,15 +10,9 @@ package Visitors;
  * @author simiao
  */
 public class Blogger extends Visitor{
-//    @Override
-//    public void like(){
-//        System.out.print("Blogger");
-//    }
-//    
+ 
     public Blogger(int no){
         super(no);
         this.setType("Blogger");
-        //this.addLocs("")
-        //System.out.println("Visitor " + (no+1) + " is a Blogger.");
     }
 }

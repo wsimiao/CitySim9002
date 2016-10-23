@@ -36,11 +36,9 @@ public class Visitor{
         Random random = new Random();
         int randomValue = random.nextInt(4);
         Citylocations citylocs = new Citylocations();
-        //System.out.println(citylocs.locs);
         
         while(randomValue!=4){
             if(i==0){
-                //int randomValue = random.nextInt(4); //[0,4)  0,1,2,3
                 System.out.println("Visitor " + no + " is going to " + citylocs.locs.get(randomValue) + "!");
                 isLiked(randomValue, citylocs);
             }else{
@@ -60,7 +58,7 @@ public class Visitor{
             i++;
         }
     }
-    //A method to see whether the randomly selected city is liked by the visitor
+
     public boolean isLiked(int randomValue, Citylocations citylocs){
         if (likeLocs.contains(citylocs.locs.get(randomValue))){
             System.out.println("Visitor " + no + " did like " + citylocs.locs.get(randomValue) + "!");

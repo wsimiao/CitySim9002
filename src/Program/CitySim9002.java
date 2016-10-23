@@ -58,7 +58,6 @@ public class CitySim9002 {
     }
     
     public void generateFiveVisitors(Random rand){
-        //Random rand = new Random(seed);
         Visitor visitor = null;
         for (int i=1; i<=5; i++){
             visitor = generateVisitor(rand.nextInt(4), i);
